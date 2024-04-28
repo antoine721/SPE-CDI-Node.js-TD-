@@ -1,6 +1,6 @@
-const { generateToken } = require("../utils/jwt");
 const prisma = require("../config/prisma");
 const { comparePassword } = require("../utils/bcrypt");
+const { generateToken } = require("../utils/jwt");
 
 class AuthentificationController {
   async login(req, res) {
@@ -27,9 +27,10 @@ class AuthentificationController {
       }
 
       // ICI ON GENERE UN TOKEN
+
       const token = generateToken(user);
 
-      return res.status(200).send({ token });
+      return res.status(200).send({ token, user });
     } catch (e) {
       return res.status(500).send({
         message: e.message,
