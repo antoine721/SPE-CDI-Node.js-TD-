@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  background: #0000003e;
   margin: 0;
   padding: 0;
   display: flex;
@@ -11,6 +11,8 @@ body {
 
 .login-form {
   background: white;
+  min-width: 400px;
+  min-height: 300px;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -23,6 +25,9 @@ body {
 
 .input-group {
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .input-group label {
@@ -31,13 +36,14 @@ body {
 }
 
 .input-group input {
-  width: 100%;
+  width: 80%;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #bbbbbb;
   border-radius: 4px;
 }
 
 button {
+  margin-top: 20px;
   width: 100%;
   padding: 10px;
   background-color: #5c67f2;

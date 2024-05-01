@@ -33,3 +33,25 @@ const getMyProfile = async () => {
 
   console.log(data);
 };
+
+const statusElement = document.getElementById("status");
+
+const updateStatus = async () => {
+  const token = localStorage.getItem("token");
+
+  if (token) {
+    const response = await fetch("http://localhost:3000/getMyProfile", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (response.ok) {
+      statusElement.textContent = "Vous êtes connecté";
+    } else {
+      statusElement.textContent = "Vous n'êtes pas connecté";
+    }
+  } else {
+    statusElement.textContent = "Vous n'êtes pas connecté";
+  }
+};
